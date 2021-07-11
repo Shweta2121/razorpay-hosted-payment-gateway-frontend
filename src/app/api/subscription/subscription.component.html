@@ -1,0 +1,203 @@
+<div class="main-section">
+  <div class="uk-flex uk-margin">
+    <div class="s1 uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default">
+      <span class="Modal-close">×</span>
+      <div class="main uk-grid-collapse" uk-grid>
+        <div class="s2-aside uk-width-1-5@m uk-width-1-3@l">
+          <h3>Create Subscription</h3>
+          <p>Provide details to create a subscription link</p>
+          <ul>
+            <li><a href=" javascript:void(0);" (click)="setCurrentStep(1)">Plan
+                Details</a></li>
+            <li><a href="javascript:void(0);" (click)="setCurrentStep(2)">Add Ons</a>
+            </li>
+            <li><a href="javascript:void(0);" (click)="setCurrentStep(3)">Link
+                Details</a></li>
+            <li><a href="javascript:void(0);" (click)="setCurrentStep(4)">Review</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <form [formGroup]="myForm" autocomplete="off" (submit)="onSubmit(myForm.value)">
+            <div class="s2-main uk-width-3-5@m uk-width-2-3@l">
+              <div [ngSwitch]="currentStep+''">
+                <div class="sub-first" *ngSwitchCase="'1'">
+                  <h3>Plan Details</h3>
+                  <div class="uk-margin s3">
+                    <div class="uk-form-label" for="plan_id">Select Plan</div>
+                    <div class="s4">
+                      <div class="uk-form-controls">
+                        <select placeholder="Email" (change)="selectChangeHandler($event)" formControlName="plan_id"
+                          class="uk-select" id="plan_id">
+                          <option value="null">Select a plan</option>
+                          <option placeholder="Email" *ngFor="let plan of plans" [value]="plan.id">
+                            <p> {{plan.item.description}}</p>
+                            <p>&#8377; {{plan.item.amount}}</p>
+                          </option>
+                        </select>
+                      </div>
+                      <span class="PowerSelect__Clear"></span><span class="PowerSelect__TriggerStatus"></span>
+                    </div>
+                  </div>
+                  <div *ngIf="selectedPlanID">
+                    <div class="uk-margin s3">
+                      <div class="s4 select-div">
+                        <div class="selct-opt">
+                          <span class="amount"> &#8377;{{selectedPlanData.item.amount}}</span>
+                          <span class="m-l">x</span>
+                          <div class="Input-elWrapper">
+                            <input #box (keyup)="0" formControlName="quantity" class="uk-input uk-form-width-medium"
+                              [value]="box.value" type="text">
+                          </div>
+                        </div>
+                        <div class="quantity"><span>(Quantity)</span></div>
+                      </div>
+                      <div class="s4 s-top">
+                        <div class="s7">Once in 3 Years customer will be charged <span> &#8377;
+                            {{selectedTotalAmount}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="row">
+                    <div class="col-xs-12 col-12 col-md-4 form-group">
+                      <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker>
+                    </div>
+                    <div class="col-xs-12 col-12 col-md-4 form-group">
+                      <input type="text" placeholder="Daterangepicker" class="form-control" bsDaterangepicker>
+                    </div>
+                  </div> -->
+
+                  <div class="uk-margin s3">
+                    <div class="uk-form-label" for="plan_id">Start Date</div>
+                    <div class="s4">
+                      <label><input class="uk-checkbox" type="checkbox"> Immediate, subscriptions starts with the first
+                        payment</label>
+                    </div>
+                  </div>
+                  <div class="uk-margin s3 s5">
+                    <div class="s4 s6 ">
+                      <div class="uk-inline">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: calendar"></span>
+                        <input class="uk-input" type="date">
+                      </div>
+                      <div class="uk-inline s8-left">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: clock"></span>
+                        <input class="uk-input" type="time">
+                      </div>
+                    </div>
+                    <div class="s4 s7">Date from which subscription should start</div>
+                  </div>
+                  <div class="uk-margin s3">
+                    <div class="uk-form-label" for="total_count">Total Count</div>
+                    <div class="s4">
+                      <input formControlName="total_count" class="uk-input uk-form-width-medium" value="" type="text">
+                      <div class="s7">No. of billing cycles to be charged</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-second" *ngSwitchCase="'2'">
+                  <h3>Add Ons</h3>
+                  <div class="uk-margin s3">
+                    <div>
+                      <label><input class="uk-checkbox" type="checkbox">I want to add an upfront amount</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-third" *ngSwitchCase="'3'">
+                  <h3>Link Details</h3>
+                  <div class="uk-margin s3">
+                    <div class="uk-form-label">Customer Contact</div>
+                    <div class="s4">
+                      <input placeholder="Email" class="uk-input uk-form-width-medium" value="" type="email">
+                      <input placeholder="Mobile" class="s10-left uk-input uk-form-width-medium" value="" type="text">
+                    </div>
+                  </div>
+                  <div class="uk-margin s3">
+                    <div class="s4">
+                      <label><input class="uk-checkbox" type="checkbox">Notify Customer</label>
+                    </div>
+                  </div>
+                  <div class="uk-margin s3">
+                    <div class="uk-form-label" for="total_count">Link Expiry</div>
+                    <div class="s4">
+                      <label><input class="uk-checkbox" type="checkbox">No Expiry</label>
+                    </div>
+                  </div>
+                  <div class="uk-margin s3">
+                    <div class="s4">
+                      <div class="uk-inline">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: calendar"></span>
+                        <input class="uk-input" type="date">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-fourth" *ngSwitchCase="'4'">
+                  <div>
+                    <h3>Plan</h3>
+                    <p>{{selectedPlanData.item.description}}</p>
+                    <p class="s77">
+                      Every Week the customer will be charged &#8377; {{selectedPlanData.item.amount}}
+                    </p>
+                  </div>
+                  <div class="payments">
+                    <div class="Payments--item">
+                      <div class="Payments--item-inner">
+                        <p class="small">First Payment</p>
+                        <p><strong>Authorization Payment:</strong>
+                          <span class="help-content help-content--currency">
+                            <span class="rzp-amount "> &#8377; {{selectedTotalAmount}}</span>
+                          </span>
+                        </p>
+                        <div>
+                          <div class="pair-group-item ">
+                            <div class="pair-label">Subscription Amount</div>
+                            <div class="pair-value"><span class="help-content help-content--currency"><span
+                                  class="rzp-amount "> &#8377; {{selectedPlanData.item.amount}}</span>
+                              </span>&nbsp;x&nbsp;{{quantity}}&nbsp;(quantity)</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="Payments--item2">
+                      <div class="Payments--item-inner2">
+                        <p class="small">Every Week after the first payment</p>
+                        <p><strong>Recurring Payments:</strong>
+                          <span class="help-content help-content--currency">
+                            <span class="rzp-amount ">&#8377; {{selectedTotalAmount}}</span>
+                          </span>
+                        </p>
+                        <div>
+                          <div class="pair-group-item ">
+                            <div class="pair-label">No. of cycles</div>
+                            <div class="pair-value"><span class="label--primary">{{total_count}}</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="foot">
+              <div *ngIf="currentStep < 4">
+                <button class="uk-align-right uk-button uk-button-primary" type="button"
+                  (click)="nextStep()">Next</button>
+              </div>
+              <div *ngIf="currentStep >= 4">
+                <button class="uk-align-right uk-button uk-button-primary" type="submit">Create
+                  Subscription Link</button>
+              </div>
+              <div *ngIf="currentStep > 1">
+                <button class="uk-align-right uk-button uk-button-primary" type="button"
+                  (click)="previousStep()">Previous</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+  <div class="uk-width-1-1">
+    <div class="uk-container">
+      <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+        <div class="uk-width-1-1@m">
+          <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+            <div class="uk-text-center">
+              <h4>Add Customer</h4>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+              <div class="uk-margin">
+                <label class="uk-form-label" for="form-name">Company/Individual Name</label>
+                <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: user"></span>
+                  <input formControlName="name" class="uk-input" type="text" placeholder="James Cook">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="form-email">Email</label>
+                <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: user"></span>
+                  <input formControlName="email" class="uk-input" type="text" placeholder="hello@example.com">
+                </div>
+              </div>
+              <!-- <div class="uk-margin">
+                <label class="uk-form-label" for="form-number">Contact No.</label>
+                <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: user"></span>
+                  <input formControlName="contno" class="uk-input" type="text" placeholder="999999999">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="form-gstin">GSTIN
+                </label>
+                <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: user"></span>
+                  <input formControlName="gstin" class="uk-input" type="text" placeholder="HJ43JW3">
+                </div>
+              </div> -->
+              <div class="uk-margin">
+                <button type="submit" class="uk-button uk-button-primary uk-width-1-1">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

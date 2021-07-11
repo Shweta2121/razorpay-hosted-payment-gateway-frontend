@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'razorpay-payment-gateway'`, () => {
+  it(`should have as title 'razorpay-paymenet-gateway'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('razorpay-payment-gateway');
+    expect(app.title).toEqual('razorpay-paymenet-gateway');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('razorpay-payment-gateway app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('razorpay-paymenet-gateway app is running!');
   });
 });

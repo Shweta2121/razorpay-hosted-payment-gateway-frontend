@@ -1,0 +1,304 @@
+.main-section {
+  position: fixed;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: scroll;
+  transition: opacity 250ms ease-in-out;
+}
+
+.s1 {
+  width: 90%;
+  max-width: 880px;
+  height: 90vh;
+  max-height: 690px;
+  min-height: 560px;
+  top: 20px;
+}
+
+.main {
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  left: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  top: 50%;
+  height: 90vh;
+  max-width: unset;
+  min-height: 560px;
+  max-height: 690px;
+  background: #fafafa;
+}
+
+.s10-left {
+  margin-left: 10px;
+}
+
+span.Modal-close {
+  position: absolute;
+  color: #58666e;
+  font-size: 30px;
+  padding: 9px 12px 11px;
+  right: 8px;
+  top: 8px;
+  line-height: 20px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.s2-aside {
+  padding: 24px 0;
+  width: 240px;
+  background: #fff;
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid #eee;
+}
+
+.s2-aside>h3 {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1.42857143;
+  color: #58666e;
+  padding: 0 24px;
+}
+
+.s2-aside>p {
+  padding: 0 24px;
+  margin: 0 0 10px;
+  color: #58666e;
+  line-height: 1.42857143;
+}
+
+.s2-aside>ul {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.s2-aside>ul>li {
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 24px;
+  margin: 4px 0;
+  color: #57666d;
+  position: relative;
+}
+
+.s2-main {
+  padding: 30px 8px !important;
+  left: 280px !important;
+  right: 0;
+  position: absolute;
+  bottom: 80px;
+  top: 0;
+  overflow: auto;
+}
+
+li>a {
+  color: #58666e;
+}
+
+.sub-first>h3,
+.sub-second>h3,
+.sub-third>h3,
+.sub-fourth>h3 {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 18px !important;
+  color: #58666e;
+}
+
+.s2-main>form {
+  margin-top: 36px;
+}
+
+.s3 {
+  font-weight: normal;
+  display: block;
+  margin: 24px 0 8px;
+  position: relative;
+}
+
+.uk-form-label {
+  top: 7px;
+  float: left;
+  width: 172px;
+  font-weight: bold;
+  position: relative;
+  text-align: right;
+  line-height: 1.42857143;
+  color: #58666e;
+  width: 136px;
+}
+
+.s4 {
+  margin-left: 156px;
+  position: relative;
+}
+
+select#form-horizontal-select {
+  border-color: #e2e2e2;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.s4>label {
+  font-weight: normal;
+  margin-bottom: 0;
+  line-height: inherit;
+  font-size: 14px;
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 5px;
+}
+
+.s5 {
+  display: table;
+  margin-top: 8px;
+  margin: 24px 0 0;
+  position: relative;
+}
+
+.s5>.s6 {
+  display: flex;
+}
+
+.s7 {
+  color: #838383;
+  font-size: 13px;
+  white-space: normal;
+}
+
+.s6>.s8-left {
+  padding-left: 15px !important;
+}
+
+.foot {
+  padding: 20px;
+  right: 0;
+  background: #f6f6f6;
+  border-top: 1px solid #e0e0e0;
+  bottom: 0;
+  position: absolute;
+  left: 240px;
+}
+
+input.uk-checkbox {
+  margin-right: 8px;
+}
+
+.select-div {
+  display: flex;
+}
+
+.amount {
+  font-weight: bold;
+}
+
+span.m-l {
+  margin-left: 10px;
+}
+
+.Input-elWrapper {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.quantity {
+  margin: 5px 0px 0px 10px;
+  display: inline-block;
+}
+
+.s-top {
+  margin-top: 10px;
+}
+
+/* ========================================================================
+   Component: Review sidebar
+ ========================================================================== */
+.s77 {
+  margin-bottom: 0;
+}
+
+.Payments--item {
+  margin-top: 30px;
+}
+
+.Payments--item:before,
+.Payments--item2:before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 2px solid #9ec0f5;
+  float: left;
+  background: #fafafa;
+  position: relative;
+  z-index: 2;
+}
+
+.Payments--item-inner {
+  border-left: 1px solid #9ec0f5;
+  padding-bottom: 30px;
+  display: inline-block;
+  margin-left: -8px;
+  padding-left: 20px;
+  width: calc(100% - 36px);
+}
+
+p.small {
+  font-size: 85%;
+}
+
+.pair-group-item {
+  width: 100%;
+  display: flex;
+  padding: 8px;
+  margin-bottom: -1px;
+  position: relative;
+}
+
+.pair-label {
+  width: 39%;
+  color: #8991ae;
+  padding: 0;
+}
+
+.pair-value {
+  position: relative;
+  width: 60%;
+  padding-left: 8px;
+  word-break: break-all;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+.Payments--item-inner2 {
+  display: inline-block;
+  margin-left: -8px;
+  padding-left: 20px;
+  width: calc(100% - 36px);
+}
+
+/* ========================================================================
+   Component: Review sidebar end
+ ========================================================================== */
+.active {
+  background-color: yellow;
+}
